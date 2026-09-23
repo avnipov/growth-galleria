@@ -132,7 +132,7 @@ export function DashboardHexLauncher() {
           to="/tools"
           className="text-xs text-muted-foreground hover:text-foreground"
         >
-          Full command center →
+          Full toolkit →
         </Link>
       </div>
 
