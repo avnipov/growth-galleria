@@ -9,6 +9,7 @@
  *
  * The output is editable in the UI before the user copies the prompt.
  */
+import { BRAND } from "@/lib/brand";
 import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { assertAiQuota } from "@/lib/ai-quota.server";
@@ -50,7 +51,7 @@ export const generateHexSpec = createServerFn({ method: "POST" })
     const apiKey = process.env.LOVABLE_API_KEY;
     if (!apiKey) throw new Error("LOVABLE_API_KEY not configured");
 
-    const system = `You design small marketing sub-tools ("hexes") inside the Marketing Command Center.
+    const system = `You design small marketing sub-tools ("hexes") inside ${BRAND.name}.
 Given a parent section, a name, and a short description, you decide:
   1) the minimum set of form fields needed to capture the data
   2) a clean Lovable prompt to build the hex + page + CRM wiring
