@@ -11,7 +11,7 @@ export const BRAND = {
   /** Short label for tight spaces (mobile nav, collapsed sidebar tooltips). */
   shortName: "AvniSH",
   /** One-line tagline used in headers and email footers. */
-  tagline: "Digital Marketing Campaign Starter",
+  tagline: "AvniSh",
   /** Short marketing description for meta tags and onboarding. */
   description:
     "Plan, launch, and track digital marketing campaigns end to end — launch checklists, standardized campaign names, UTM tracking links, and performance dashboards in one shared workspace.",
