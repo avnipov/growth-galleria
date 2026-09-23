@@ -40,7 +40,7 @@ export const SignupEmail = ({
 
         <Heading style={styles.h1}>Confirm your email</Heading>
         <Text style={styles.text}>
-          Welcome to {siteName} — your marketing command center. Confirm{' '}
+          Welcome to {siteName}. Confirm{' '}
           {recipient ? (
             <Link href={`mailto:${recipient}`} style={styles.link}>
               {recipient}

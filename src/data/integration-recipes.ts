@@ -5,6 +5,8 @@
  * own remix.
  */
 
+import { BRAND } from "@/lib/brand";
+
 export type IntegrationCategory =
   | "crm"
   | "analytics"
@@ -100,7 +102,7 @@ Follow the existing TanStack server-fn pattern in src/lib/*.functions.ts and pro
       "Per-UTM conversion attribution",
       '"Last synced" chip with manual refresh',
     ],
-    prompt: `Add Google Analytics 4 sync to my Marketing Command Center.
+    prompt: `Add Google Analytics 4 sync to ${BRAND.name}.
 
 Use a service-account JSON stored in a new secret GA4_SERVICE_ACCOUNT_JSON, plus GA4_PROPERTY_ID.
 
@@ -163,7 +165,7 @@ Build a server fn \`plausible_sync_workspace\` that calls https://plausible.io/a
       "Per-workspace channel routing",
       "Handles status_changed, asset.approved, variant.winner_picked events",
     ],
-    prompt: `I want Slack notifications for my Marketing Command Center.
+    prompt: `I want Slack notifications for ${BRAND.name}.
 
 Webhook URL is already supported via /connectors. Build:
 1. A "Notify Slack" toggle on each workspace (stored in user_preferences key 'slack-channel:{workspace_id}').

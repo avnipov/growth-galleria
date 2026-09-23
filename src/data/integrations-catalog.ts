@@ -18,6 +18,8 @@
  * Cloud).
  */
 
+import { BRAND } from "@/lib/brand";
+
 export type IntegrationMethod = "connector" | "api-key" | "oauth-app" | "webhook";
 
 export type IntegrationCat =
@@ -597,7 +599,7 @@ export function buildPromptFor(entry: IntegrationEntry): string {
             `3. This connector does NOT use the gateway. \`process.env.${entry.envVar}\` is the real ${entry.name} API key. Call ${entry.name}'s API directly at \`${entry.directApiBase}\` with header \`${entry.directAuthHeader}\`. Do NOT route through \`connector-gateway.lovable.dev\` — that will 404.`,
           ];
       return [
-        `Add a "${entry.name}" integration to my Marketing Command Center using Lovable's managed connector.`,
+        `Add a "${entry.name}" integration to ${BRAND.name} using Lovable's managed connector.`,
         ``,
         `Setup:`,
         `1. Use the Lovable "${entry.name}" connector (connector_id: \`${entry.connectorId}\`). ${usesGateway ? "The OAuth flow is handled by Lovable" : "Lovable stores the API key for me"} — do NOT ask me to paste a key.`,
@@ -617,7 +619,7 @@ export function buildPromptFor(entry: IntegrationEntry): string {
 
     case "api-key":
       return [
-        `Add a "${entry.name}" integration to my Marketing Command Center using a direct API key (no OAuth).`,
+        `Add a "${entry.name}" integration to ${BRAND.name} using a direct API key (no OAuth).`,
         ``,
         `Setup:`,
         `1. Generate an API key at ${entry.dashboardUrl ?? "the provider's dashboard"}.`,
@@ -655,7 +657,7 @@ export function buildPromptFor(entry: IntegrationEntry): string {
 
     case "webhook":
       return [
-        `Add a "${entry.name}" inbound webhook to my Marketing Command Center.`,
+        `Add a "${entry.name}" inbound webhook to ${BRAND.name}.`,
         ``,
         `Setup:`,
         `1. In ${entry.name}, configure the webhook to POST to \`https://${APP_HOST_HINT}/api/public/webhooks/${entry.id}\`.`,
