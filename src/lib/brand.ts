@@ -7,9 +7,9 @@
  */
 export const BRAND = {
   /** Full product name shown in lockups, titles, and email "from" lines. */
-  name: "Marketing Campaign Command Center",
+  name: "AvniSH",
   /** Short label for tight spaces (mobile nav, collapsed sidebar tooltips). */
-  shortName: "MC3",
+  shortName: "AvniSH",
   /** One-line tagline used in headers and email footers. */
   tagline: "Digital Marketing Campaign Starter",
   /** Short marketing description for meta tags and onboarding. */
@@ -22,10 +22,10 @@ export const BRAND = {
   domain: "example.com",
   /**
    * Optional support inbox surfaced in error/empty states.
-   * Remixers: replace with your real support address (or set to undefined
-   * to hide the "Contact support" affordance everywhere).
+   * Not set for this deployment — put a real address here to surface a
+   * "Contact support" link in error and empty states.
    */
-  supportEmail: "support@example.com",
+  supportEmail: undefined,
 } as const;
 
 export type Brand = typeof BRAND;
